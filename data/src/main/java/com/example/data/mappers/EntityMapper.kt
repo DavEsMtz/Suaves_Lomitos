@@ -5,7 +5,7 @@ import com.example.domain.models.Dog
 
 internal fun Dog.toEntity() =
     DogEntity(
-        entityId = null,
+        entityId = dogId,
         dogName = dogName,
         description = description,
         age = age,
