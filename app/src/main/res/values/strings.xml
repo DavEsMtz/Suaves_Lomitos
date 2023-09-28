@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Suaves Lomitos</string>
+
+    <string name="label_generic_error">Wild error has appeared!</string>
+    <string name="label_empty_search">There are none suaves lomitos to show</string>
+    <string name="label_age_description">Almost %1$s years</string>
+</resources>
