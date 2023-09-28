@@ -19,10 +19,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import coil.request.ImageRequest
+import com.example.suaveslomitos.R
 import com.example.suaveslomitos.ui.theme.Graphite
 import com.example.suaveslomitos.ui.theme.Titanium
 
@@ -96,7 +100,12 @@ private fun <T> BigImageItemView(item: BigImageItem<T>) {
             )
         }
         AsyncImage(
-            model = item.imageUrl, contentDescription = item.imageContentDescription,
+            placeholder = painterResource(id = R.drawable.icon_lomito),
+            model = ImageRequest.Builder(LocalContext.current)
+                .data(item.imageUrl)
+                .crossfade(true)
+                .build(),
+            contentDescription = item.imageContentDescription,
             modifier = Modifier
                 .width(imageWidth.dp)
                 .fillMaxHeight()

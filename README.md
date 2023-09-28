@@ -14,7 +14,7 @@ This project shows a list of suaves lomitos using clean architecture and reposit
 
 ##### Known Issues:
 
-- First time elements are loaded, replacing is not smooth enough
+- LGTM
 
 ### Tips:
 
