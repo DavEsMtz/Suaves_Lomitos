@@ -11,12 +11,14 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
 @Composable
-fun shimmerBrush(showShimmer: Boolean = true,targetValue:Float = 1000f): Brush {
+fun shimmerBrush(showShimmer: Boolean = true, targetValue: Float = 1000f): Brush {
     return if (showShimmer) {
         val shimmerColors = listOf(
+            Color.LightGray.copy(alpha = 1.0f),
             Color.LightGray.copy(alpha = 0.6f),
             Color.LightGray.copy(alpha = 0.2f),
             Color.LightGray.copy(alpha = 0.6f),
+            Color.LightGray.copy(alpha = 1.0f)
         )
 
         val transition = rememberInfiniteTransition(label = "")
@@ -34,7 +36,7 @@ fun shimmerBrush(showShimmer: Boolean = true,targetValue:Float = 1000f): Brush {
         )
     } else {
         Brush.linearGradient(
-            colors = listOf(Color.Transparent,Color.Transparent),
+            colors = listOf(Color.Transparent, Color.Transparent),
             start = Offset.Zero,
             end = Offset.Zero
         )

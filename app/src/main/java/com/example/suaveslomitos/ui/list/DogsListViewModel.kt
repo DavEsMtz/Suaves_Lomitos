@@ -37,6 +37,8 @@ class DogsListViewModel @Inject constructor(private val useCase: FetchDogsUseCas
                     is DataSourceResultState.Success -> {
                         _viewState.emit(DogsListViewState.SuccessDogs(dogsResultState.data))
                     }
+
+                    else -> {}
                 }
             }
         }

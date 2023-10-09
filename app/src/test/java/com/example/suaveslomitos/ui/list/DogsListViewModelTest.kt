@@ -56,7 +56,7 @@ class DogsListViewModelTest {
 
         viewModel.viewState.test {
             // when
-            viewModel.populateDogs()
+//            viewModel.populateDogs()  //unnecessary
 
             // then
             assertEquals(expected, awaitItem())

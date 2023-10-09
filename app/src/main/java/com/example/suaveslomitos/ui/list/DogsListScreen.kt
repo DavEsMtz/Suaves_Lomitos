@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import com.example.suaveslomitos.R
 import com.example.suaveslomitos.composable.BigImageItem
@@ -49,11 +50,13 @@ fun DogsListScreen(viewModel: DogsListViewModel, paddingValues: PaddingValues = 
                         imageUrl = dog.image,
                         title = dog.dogName,
                         description = dog.description,
-                        footNote = stringResource(id = R.string.label_age_description, dog.age),
+                        footNote = pluralStringResource(
+                            id = R.plurals.label_age_description, dog.age, dog.age
+                        ),
                         item = dog
                     )
                 }
-                DrawBigImageList(list = bigImageItems)
+                DrawBigImageList(list = bigImageItems, placeHolderId = R.drawable.icon_lomito)
             }
         }
     }
